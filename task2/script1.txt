@@ -1,0 +1,9 @@
+debug
+ls
+cd /home
+ls -la
+pwd
+cd ..
+pwd
+debug
+exit
