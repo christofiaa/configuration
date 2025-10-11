@@ -1,0 +1,108 @@
+echo "=== ЭТАП 5: Тестирование команды touch ==="
+echo.
+
+echo "=== Текущее состояние VFS ==="
+pwd
+ls -la
+
+echo.
+echo "=== Тестирование создания файлов в текущей директории ==="
+touch newfile1.txt
+touch newfile2.conf
+touch empty_file
+
+echo.
+echo "=== Проверка создания файлов ==="
+ls
+
+echo.
+echo "=== Тестирование создания файлов с абсолютными путями ==="
+touch /home/user/new_absolute_file.txt
+touch /var/log/new_log.log
+
+echo.
+echo "=== Проверка созданных файлов ==="
+ls /home/user
+ls /var/log
+
+echo.
+echo "=== Тестирование обновления существующих файлов ==="
+touch /home/user/test.txt
+touch newfile1.txt
+
+echo.
+echo "=== Тестирование создания нескольких файлов одновременно ==="
+touch file1 file2 file3
+
+echo.
+echo "=== Проверка множественного создания ==="
+ls
+
+echo.
+echo "=== Тестирование команды mkdir ==="
+mkdir new_directory
+mkdir /home/user/my_docs
+mkdir /var/temp_files
+
+echo.
+echo "=== Проверка создания директорий ==="
+ls
+ls /home/user
+ls /var
+
+echo.
+echo "=== Тестирование создания файлов в новых директориях ==="
+cd new_directory
+touch file_in_new_dir.txt
+ls
+cd ..
+
+echo.
+echo "=== Тестирование обработки ошибок touch ==="
+touch
+touch /invalid/path/file.txt
+touch /home/user/nonexistent_dir/file.txt
+
+echo.
+echo "=== Тестирование обработки ошибок mkdir ==="
+mkdir
+mkdir /invalid/path/newdir
+mkdir new_directory  # уже существует
+
+echo.
+echo "=== Комплексное тестирование: создание структуры ==="
+mkdir project
+cd project
+mkdir src
+mkdir docs
+mkdir tests
+touch src/main.py
+touch src/utils.py
+touch docs/readme.md
+touch tests/test_basic.py
+ls -R
+
+echo.
+echo "=== Проверка содержимого созданной структуры ==="
+cd /
+find -name "*.py"
+find -name "*.md"
+find -name "project"
+
+echo.
+echo "=== Тестирование VFS операций с модификациями ==="
+vfs-save stage5_modified_vfs.xml
+vfs-load stage5_modified_vfs.xml
+
+echo.
+echo "=== Проверка загруженной VFS ==="
+ls /home/user
+ls /project
+find -name "newfile*"
+
+echo.
+echo "=== Отладочная информация ==="
+debug
+
+echo.
+echo "=== Тестирование этапа 5 завершено! ==="
