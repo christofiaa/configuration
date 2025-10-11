@@ -1,0 +1,52 @@
+# Стартовый скрипт для тестирования VFS Terminal
+# Тестирование всех команд и обработки ошибок
+
+echo "=== Тестирование команды ls ==="
+ls
+ls /
+ls /home
+ls /home/user/documents
+
+echo "=== Тестирование команды cd ==="
+pwd
+cd home
+pwd
+cd user/documents
+pwd
+cd ../..
+pwd
+cd /var/log
+pwd
+cd /
+pwd
+
+echo "=== Тестирование команды cat ==="
+cat readme.txt
+cat /home/user/documents/readme.txt
+cat /etc/config.txt
+
+echo "=== Тестирование команды tail ==="
+tail /home/user/data.log
+tail -n 3 /home/user/data.log
+tail /var/log/system.log
+
+echo "=== Тестирование команды find ==="
+find / "*.txt"
+find /home "*.log"
+find /var "system.log"
+find / "*.txt" -maxdepth 2
+
+echo "=== Тестирование работы с VFS ==="
+vfs-save test_save.xml
+vfs-load test_save.xml
+ls /
+
+echo "=== Тестирование обработки ошибок ==="
+cd nonexistent_directory
+ls /invalid_path
+cat unknown_file.txt
+tail missing_file.log
+find /wrong_path "*.txt"
+vfs-load nonexistent.xml
+
+echo "=== Все тесты завершены ==="

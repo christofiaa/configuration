@@ -1,0 +1,22 @@
+debug
+ls
+cd home
+ls
+cd user
+ls  
+cd documents
+ls
+cat project.txt
+cd archive
+ls
+cat old.txt
+cd /home/user/downloads
+ls
+cat temp.txt
+cd /var/log
+ls
+cat system.log
+cd /
+vfs-save complex_backup.xml
+debug
+exit

@@ -1,0 +1,33 @@
+# Тестовый скрипт для VFS Terminal - Этап 4
+# Проверка основных команд
+
+echo "=== Тестирование команды ls ==="
+ls
+ls /
+
+echo "=== Тестирование команды cd ==="
+cd /
+pwd
+cd nonexistent_directory
+cd /
+pwd
+
+echo "=== Тестирование команды tail ==="
+# Создадим тестовый файл через VFS (в реальной системе нужно сначала создать файл)
+# tail test.txt
+# tail -n 5 test.txt
+
+echo "=== Тестирование команды find ==="
+find / "*.txt"
+find / -maxdepth 0 "*.txt"
+
+echo "=== Тестирование работы с VFS ==="
+vfs-save test_output.xml
+vfs-load test_output.xml
+
+echo "=== Тестирование обработки ошибок ==="
+cat nonexistent_file.txt
+tail nonexistent_file.txt
+find nonexistent_path "*.txt"
+
+echo "=== Тестирование завершено ==="

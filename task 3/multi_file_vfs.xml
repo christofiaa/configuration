@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<vfs>
+    <directory name="docs">
+        <file name="manual.txt" type="text">
+            <content>VXNlciBtYW51YWw=</content>
+        </file>
+        <file name="guide.pdf" type="binary">
+            <content>cGRmY29udGVudA==</content>
+        </file>
+    </directory>
+    <directory name="bin">
+        <file name="app.exe" type="binary">
+            <content>ZXhlY3V0YWJsZQ==</content>
+        </file>
+    </directory>
+    <file name="config.ini" type="text">
+        <content>W2dlbmVyYWxdCnNldHRpbmc9dmFsdWU=</content>
+    </file>
+</vfs>

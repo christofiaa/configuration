@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<vfs>
+    <directory name="level1">
+        <directory name="level2">
+            <directory name="level3">
+                <directory name="level4">
+                    <file name="deep_file.txt" type="text">
+                        <content>VGhpcyBpcyBhIGRlZXBseSBuZXN0ZWQgZmlsZQ==</content>
+                    </file>
+                </directory>
+                <file name="level3_file.txt" type="text">
+                    <content>TGV2ZWwgMyBmaWxl</content>
+                </file>
+            </directory>
+            <file name="level2_file.txt" type="text">
+                <content>TGV2ZWwgMiBmaWxl</content>
+            </file>
+        </directory>
+        <file name="level1_file.txt" type="text">
+            <content>TGV2ZWwgMSBmaWxl</content>
+        </file>
+    </directory>
+    <file name="root_file.txt" type="text">
+        <content>Um9vdCBsZXZlbCBmaWxl</content>
+    </file>
+</vfs>

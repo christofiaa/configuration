@@ -1,0 +1,11 @@
+debug
+ls -la
+cat readme.txt
+cat config.ini
+cd documents
+ls
+cat note.txt
+cd /
+vfs-save medium_backup.xml
+debug
+exit

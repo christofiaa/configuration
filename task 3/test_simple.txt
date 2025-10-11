@@ -1,0 +1,9 @@
+debug
+ls
+cd documents
+ls
+pwd
+cd /
+vfs-save simple_backup.xml
+debug
+exit
