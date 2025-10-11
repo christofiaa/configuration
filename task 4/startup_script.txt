@@ -1,0 +1,61 @@
+echo "=== Тестирование команды pwd ==="
+pwd
+
+echo "=== Тестирование команды ls ==="
+ls
+ls /
+ls /home
+ls /var/log
+
+echo "=== Тестирование команды cd ==="
+cd home
+pwd
+cd user
+pwd
+cd documents
+pwd
+cd ../..
+pwd
+cd /var/log
+pwd
+cd /
+
+echo "=== Тестирование команды cat ==="
+cat readme.txt
+cat /home/user/test.txt
+
+echo "=== Тестирование команды tail (базовое использование) ==="
+tail /home/user/test.txt
+
+echo "=== Тестирование команды tail с указанием количества строк ==="
+tail -n 5 /home/user/test.txt
+tail -n 3 /home/user/data.log
+
+echo "=== Тестирование команды find по имени ==="
+find -name "*.txt"
+find /home -name "*.log"
+find /var -name "system.*"
+
+echo "=== Тестирование команды find по содержимому ==="
+find -content "тест"
+find / -content "лог"
+find /home -content "конфигурация"
+
+echo "=== Тестирование команды find с ошибками ==="
+find
+find -name
+find /invalid/path -name "*.txt"
+
+echo "=== Тестирование команды tail с ошибками ==="
+tail
+tail invalid_file.txt
+tail -n invalid /home/user/test.txt
+
+echo "=== Тестирование VFS операций ==="
+vfs-save test_save.xml
+vfs-load test_save.xml
+
+echo "=== Тестирование отладочной информации ==="
+debug
+
+echo "=== Все тесты завершены ==="
